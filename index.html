@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d3b">
+  <meta name="description" content="Generador de presupuestos para equipos industriales, informáticos y de conectividad.">
+  <title>Meca Presupuestos | Equipos y tecnología</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Meca Presupuestos, inicio">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-copy"><strong>MECA</strong><span>PRESUPUESTOS</span></span>
+    </a>
+    <span class="topbar-note"><span class="status-dot"></span> Herramienta de cotización</span>
+  </header>
+
+  <main class="page-shell" id="inicio">
+    <section class="intro">
+      <div class="eyebrow"><span></span> EQUIPAMIENTO PARA TU EMPRESA</div>
+      <h1>Un presupuesto claro.<br><span>Una mejor decisión.</span></h1>
+      <p>Configurá los equipos, revisá los valores y compartí una cotización lista para imprimir.</p>
+    </section>
+
+    <form class="quote-card" id="quote-form" novalidate>
+      <div class="card-heading">
+        <div><span class="section-kicker">NUEVA COTIZACIÓN</span><h2>Datos del presupuesto</h2></div>
+        <span class="quote-number" id="quote-number">PRESUPUESTO · —</span>
+      </div>
+
+      <label class="client-field" for="client-name">
+        <span>Nombre y apellido del cliente</span>
+        <input id="client-name" name="client" type="text" placeholder="Ej. Martina García" autocomplete="name" required maxlength="90">
+      </label>
+
+      <div class="items-heading">
+        <div><span class="section-kicker">DETALLE</span><h2>Productos</h2></div>
+        <span class="items-limit">Hasta 5 productos</span>
+      </div>
+      <div class="table-wrap">
+        <table class="items-table">
+          <thead><tr><th scope="col">Producto</th><th scope="col">Cantidad</th><th scope="col">Precio unitario</th><th scope="col" class="line-total-heading">Importe</th><th scope="col"><span class="sr-only">Quitar</span></th></tr></thead>
+          <tbody id="items-body"></tbody>
+        </table>
+      </div>
+      <button class="add-item" id="add-item" type="button"><span aria-hidden="true">＋</span> Agregar producto</button>
+
+      <div class="summary-grid">
+        <section class="payment-panel" aria-labelledby="payment-title">
+          <span class="section-kicker">OPCIONES DE PAGO</span><h2 id="payment-title">Elegí cómo pagar</h2>
+          <div class="payment-option"><span class="payment-icon">12</span><span class="payment-copy"><strong>Ahora 12</strong><small>12 cuotas · sin interés</small></span><span class="payment-amount"><strong id="installment-12">$ 0,00</strong><small>por cuota</small></span></div>
+          <div class="payment-option"><span class="payment-icon payment-icon-alt">18</span><span class="payment-copy"><strong>Ahora 18</strong><small>18 cuotas · 75% de interés</small></span><span class="payment-amount"><strong id="installment-18">$ 0,00</strong><small>por cuota</small></span></div>
+          <p class="payment-note">Financiación calculada sobre el total con IVA incluido.</p>
+        </section>
+        <section class="totals-panel" aria-label="Resumen de importes">
+          <div class="total-row"><span>Subtotal</span><strong id="subtotal">$ 0,00</strong></div>
+          <div class="total-row"><span>IVA <span class="tax-rate">21%</span></span><strong id="tax">$ 0,00</strong></div>
+          <div class="total-row grand-total"><span>Total</span><strong id="total">$ 0,00</strong></div>
+          <p class="tax-note">Impuestos discriminados en pesos argentinos (ARS).</p>
+        </section>
+      </div>
+
+      <div class="form-message" id="form-message" role="alert" aria-live="polite"></div>
+      <div class="actions">
+        <p>Revisá los datos antes de emitir el presupuesto.</p>
+        <div class="action-buttons"><button class="button button-secondary" id="print-button" type="button"><span aria-hidden="true">↗</span> Imprimir presupuesto</button><button class="button button-primary" id="pdf-button" type="button"><span aria-hidden="true">↓</span> Exportar a PDF</button></div>
+      </div>
+    </form>
+    <footer class="page-footer"><span>MECA PRESUPUESTOS</span><span>Los precios ingresados son responsabilidad del usuario.</span></footer>
+  </main>
+</body>
+</html>
