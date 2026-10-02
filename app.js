@@ -2,8 +2,10 @@
 
 const IVA = 0.21;
 const PRODUCTS = [
-  "Notebook empresarial", "PC de escritorio", "Monitor LED", "Servidor", "Router", "Switch de red",
-  "Access point", "Cámara IP", "UPS / estabilizador", "Impresora", "Disco de almacenamiento", "Otro producto"
+  "Notebook empresarial", "Notebook workstation", "PC de escritorio", "Workstation gráfica", "Monitor LED",
+  "Servidor", "Rack para servidor", "Router", "Switch de red", "Access point", "Firewall",
+  "Cámara IP", "Cableado estructurado", "UPS / estabilizador", "Impresora", "Disco de almacenamiento",
+  "Memoria RAM", "Placa de red", "Proyector", "Otro producto"
 ];
 const money = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" });
 const body = document.querySelector("#items-body");
